@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMI Calculator</title>
+    <link rel="icon" type="image/x-icon"  href="https://www.ifahja.com/wp-content/uploads/2012/10/BMI-icon512.png">
+    <style>
+        body{
+    background-image:url('picturesbmi/Light-Blue-HD-Backgrounds.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    font-family:'Poppins',sans-serif;
+        }
+.buttonn{
+background-color: rgb(196, 238, 255);
+  color:black;
+  font-size: 15px;
+  font-weight: 600;
+  position: relative;
+  border-radius: 50px;
+  cursor: pointer;
+  height: 55px;
+  width: 150px;
+  padding:20px;
+  margin:10px;
+  text-align:center;
+  animation:slideRight 1s ease;
+  
+
+}
+.buttonn:hover {
+  color: black;
+  background-color: rgb(97, 62, 234);
+}
+
+@keyframes slideRight {
+   from{
+           transform: translateX(-100px);
+             opacity:0;
+       }
+   to{
+            transform: translateX(0px);
+             opacity:1;
+     }
+ }
+ .container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    margin:10px;
+    background-color: transparent;
+    flex-direction:column;
+    height:400px;
+    width:500px;
+    margin: 20vh auto;
+    border-radius: 15px;
+    border:3px outset ;
+    text-align:center;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+   margin-top: 15px;
+}
+.floatleft{
+    float:left;
+}
+.designinput{
+ border-radius: 50px;
+width:15rem;
+height:14rem;
+text-align: center;
+color:rgb(12, 12, 214);
+font-weight: bold;
+
+
+ }
+ 
+
+ .designinput:hover{
+    width:18rem;
+    border:3px outset rgb(12, 12, 214);
+ }
+ .bold{
+    font-weight: bold;
+ }
+ 
+</style>
+</head>
+<body>
+    <button class="buttonn" type="button" onclick="window.location.href='bmicalculator.html'">Return </button>
+    <form>
+    <div class="container">
+
+    <label  for="weight"><strong>Weight(kg)</strong></label><br/><br/>
+    <input class="designinput"  type="text" id="weight" name="weight" placeholder="Enter your Weight"><br/><br/>
+    <label  for="height"><strong>Height(cm)</strong></label><br/><br/>
+    <input class="designinput"  type="text" id="height" name="height" placeholder="Enter your Height"><br/>
+</form>
+<p >Your BMI is <span class="bold" id="result"></span></p>
+<img id="image" src=""  style="width:100px; height:100 ;"/>
+<div>
+<button class="buttonn floatleft" type="button" onclick="calculate()" >Calculate</button>
+<input class="buttonn floatleft"type="reset"  value="Clear"/>
+</div>
+<script>
+    function calculate(){
+var w=document.getElementById("weight").value;
+var h=document.getElementById("height").value;
+const heightInMeters= h / 100;
+const result  = (w / Math.pow(heightInMeters, 2)).toFixed(1);
+
+if(result <18.5){
+    document.getElementById("result").innerHTML=result;
+    document.getElementById("image").src="picturesbmi/underweightboy.jpg";
+}
+else if(result>=18.5 && result<24.9){
+    document.getElementById("result").innerHTML=result;
+    document.getElementById("image").src="picturesbmi/normalboy.jpg";
+}
+
+else if(result>=24.9 && result<29.9){
+    document.getElementById("result").innerHTML=result;
+    document.getElementById("image").src="picturesbmi/overweigtboy.jpg";
+}
+else {
+    document.getElementById("result").innerHTML=result;
+    document.getElementById("image").src="picturesbmi/obeseboy.jpg";
+}
+
+    }
+</script> 
+</div>
+</body>
+
+</html>

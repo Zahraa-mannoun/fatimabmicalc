@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMI Calculator</title>
+    <link rel="icon" type="image/x-icon"  href="https://www.ifahja.com/wp-content/uploads/2012/10/BMI-icon512.png">
+    <style>
+
+body{
+    background-image:url('picturesbmi/boygirl.jpg');
+    background-position:50%;
+    background-repeat: no-repeat;
+    font-family:sans-serif;
+  
+}
+#container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    margin:10px;
+    background-color: transparent;
+    flex-direction:column;
+    height:40vh;
+    width:50%;
+    margin: 20vh auto;
+    border-radius: 15px;
+}
+button{
+background-color: bisque;
+  color:black;
+  font-size: 15px;
+  font-weight: 600;
+  position: relative;
+  border-radius: 50px;
+  cursor: pointer;
+  height: 55px;
+  width: 150px;
+  padding:20px;
+  margin:10px;
+  text-align:center;
+  transition: transform 0.3s;
+  animation:slideRight 1s ease;
+}
+button:hover {
+  color: black;
+  background-color: rgb(245, 119, 119);
+  cursor:pointer;
+  transform:translateY(-10px);
+}
+.buttonn{
+background-color: bisque;
+  color:black;
+  font-size: 15px;
+  font-weight: 600;
+  position: relative;
+  border-radius: 50px;
+  cursor: pointer;
+  height: 55px;
+  width: 150px;
+  padding:20px;
+  margin:10px;
+  text-align:center;
+  animation:slideRight 1s ease;
+  
+
+}
+.buttonn:hover {
+  color: black;
+  background-color: rgb(245, 119, 119);
+}
+
+@keyframes slideRight {
+   from{
+           transform: translateX(-100px);
+             opacity:0;
+       }
+   to{
+            transform: translateX(0px);
+             opacity:1;
+     }
+ }
+ 
+    </style>
+</head>
+
+<body>
+    <button class="buttonn" type="button" onclick="window.location.href='bmicalculator.html'">Return </button>
+    <div id="container">
+        <h3>Choose your gender beautiful</h3>
+        <button type="button" onclick="window.location.href='Girl.html'">Girl</button>
+        <button type="button"  onclick="window.location.href='Boy.html'"> Boy</button>
+    </div>
+</body>
+</html>
+
